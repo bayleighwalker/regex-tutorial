@@ -7,10 +7,13 @@ In this gist, we will introduce JavaScript regular expressions using the followi
 /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
 We will dissect the above RegEx into components and elaborate on each
 
-Table of Contents
 
-Regex Components
+
+
+
+
 Anchors
+
 The ^ and $ in the regex are Anchors, as seen in the beginning and end of the expression:
 
 /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/
@@ -23,7 +26,12 @@ When a regex contains both beginning ^ and ending $ anchors, a search using the 
 
 In our regex above, the beginning ^ and ending $ anchors indicate that the search must match characters defined by the piece of the expression located between the anchors: ([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6}) We will explain each of these components in their respective sections below.
 
+
+
+
 Quantifiers
+
+
 The curly brackets {} in the regex indicate quantifiers, as shown by {2,6} towards the end of the expression:
 
 /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/
@@ -45,7 +53,11 @@ The second OR Operator in the regex [\da-z\.-] indicates that any digit \d, or a
 
 The final OR Operator in the regex [a-z\.] indicates that any letter from a-z or a dot . in this location would return a match. As mentioned in the Quantifiers section above, this refers to the domain at the end of the email address. For example, the characters "com" in the email address "coder123@gmail.com" would return a match as they are comprised of letters from a-z. International or similar domains including an extra dot . such as ".co.jp" would also return a match, as a dot . is included within the OR Operator.
 
+
+
 Character Classes
+
+
 Character Classes are identified with a backslash \ and can be found proceeding . and d characters in our regex:
 
 /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/
@@ -55,11 +67,16 @@ Including the backslash before a dot \. indicates that we are literally searchin
 The \d Character Class matches a single character that is a digit from 0-9. In our regex above, [\da-z\.-] indicates that we are looking for a digit, or a letter from a-z, or a dot . or a dash -. As described above in the OR Operator section, this piece refers to the portion of the email address after the @ sign (gmail, hotmail, etc).
 
 Flags
+
+
 Flags are the forward slashes // that begin and end the regex:
 
 /^([a-z0-9_.-]+)@([\da-z.-]+).([a-z.]{2,6})$/
 
 Regular expressions, including our regex above, are generally contained within slashes // that simply delimit the search pattern. Some expressions have specific flags that modify the search parameters, such as making the seach case-insensitive, but our regex just includes standard flags.
+
+
+
 
 Grouping and Capturing
 Parentheses () are used in regular expressions to group together pieces of the search. In our regex, our expression is grouped into 3 sections:
@@ -68,8 +85,8 @@ Parentheses () are used in regular expressions to group together pieces of the s
 
 As defined in previous sections above, the first group ([a-z0-9_\.-]+) consists of the characters before the @ sign in an email address (coder123, firstname.lastname, etc). The second group ([\da-z\.-]+) consists of the characters just after the @ sign in an email address (gmail, hotmail, etc). The third group ([a-z\.]{2,6}) consists of the domain after the dot . at the end of the email address (com, net, co.jp, etc).
 
-Bracket Expressions
-Please refer to OR Operator above.
+
+
 
 Greedy Match
 A Greedy Match is created when a regex includes a + as we can see twice in our regex below:
