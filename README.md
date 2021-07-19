@@ -11,7 +11,7 @@ We will dissect the above RegEx into components and elaborate on each
 
 
 
-
+''
 Anchors
 
 The ^ and $ in the regex are Anchors, as seen in the beginning and end of the expression:
@@ -95,4 +95,4 @@ A Greedy Match is created when a regex includes a + as we can see twice in our r
 
 The + basically means "as many as possible" of the previous character(s), For example, A+ would match "A", "AA", "AAA", and so on because it will match as many "A"s that may exist in the location.
 
-In our regex above, the characters directly before the @ sign [a-z0-9_\.-] and directly after the @ sign [\da-z\.-] are both followed by a +. In the context of this regex, it means there is not a limit to how many characters may exist before and after the @ sign.
+In our regex above, the characters directly before the @ sign [a-z0-9_\.-] and directly after the @ sign [\da-z\.-] are both followed by a +. In the context of this regex, it means there is not a limit to how many characters may exist before and after the @ sign.  ''
